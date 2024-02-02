@@ -1,0 +1,22 @@
+object KeyBoard: TKeyBoard
+  Size.Width = 700.000000000000000000
+  Size.Height = 700.000000000000000000
+  Size.PlatformDefault = False
+  object Rectangle: TRectangle
+    Align = Client
+    Fill.Color = claWhite
+    Size.Width = 700.000000000000000000
+    Size.Height = 700.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Color = claNull
+    Stroke.Thickness = 0.000000000000000000
+  end
+  object KeyRectangle: TRectangle
+    Align = Center
+    Fill.Color = claNull
+    Size.Width = 670.000000000000000000
+    Size.Height = 645.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Thickness = 0.000000000000000000
+  end
+end

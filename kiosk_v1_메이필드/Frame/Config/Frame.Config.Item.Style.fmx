@@ -1,0 +1,38 @@
+object ConfigItemStyle: TConfigItemStyle
+  EnableDragHighlight = False
+  HitTest = False
+  Size.Width = 800.000000000000000000
+  Size.Height = 90.000000000000000000
+  Size.PlatformDefault = False
+  object Rectangle1: TRectangle
+    Align = Client
+    EnableDragHighlight = False
+    Fill.Color = claNull
+    HitTest = False
+    Size.Width = 800.000000000000000000
+    Size.Height = 90.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Color = xFF555555
+    Stroke.Thickness = 0.500000000000000000
+    object txtName: TText
+      Align = Client
+      EnableDragHighlight = False
+      HitTest = False
+      Size.Width = 800.000000000000000000
+      Size.Height = 90.000000000000000000
+      Size.PlatformDefault = False
+      Text = #54872#44221' '#49444#51221
+      TextSettings.Font.Family = 'Noto Sans CJK KR'
+      TextSettings.Font.Size = 40.000000000000000000
+    end
+  end
+  object SelectRectangle: TRectangle
+    Align = Client
+    Fill.Color = claNull
+    Size.Width = 800.000000000000000000
+    Size.Height = 90.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Thickness = 0.000000000000000000
+    OnClick = SelectRectangleClick
+  end
+end

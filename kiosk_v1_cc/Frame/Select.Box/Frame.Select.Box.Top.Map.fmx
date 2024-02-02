@@ -1,0 +1,84 @@
+object SelectBoxTopMap: TSelectBoxTopMap
+  Size.Width = 1080.000000000000000000
+  Size.Height = 144.000000000000000000
+  Size.PlatformDefault = False
+  object Layout1: TLayout
+    Align = Top
+    Size.Width = 1080.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    inline SelectBoxTopMapListStyle1: TSelectBoxTopMapListStyle
+      Align = Client
+      Size.Width = 1080.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      inherited Layout1: TLayout
+        inherited Rectangle: TRectangle
+          Size.Width = 1015.000000000000000000
+        end
+        inherited LeftRectangle: TRectangle
+          Margins.Left = 15.000000000000000000
+          Position.X = 15.000000000000000000
+          inherited Text: TText
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+          end
+        end
+      end
+    end
+  end
+  object Layout2: TLayout
+    Align = Top
+    Margins.Top = 12.000000000000000000
+    Position.Y = 52.000000000000000000
+    Size.Width = 1080.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    inline SelectBoxTopMapListStyle2: TSelectBoxTopMapListStyle
+      Align = Client
+      Size.Width = 1080.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      inherited Layout1: TLayout
+        inherited Rectangle: TRectangle
+          Size.Width = 1015.000000000000000000
+        end
+        inherited LeftRectangle: TRectangle
+          Margins.Left = 15.000000000000000000
+          Position.X = 15.000000000000000000
+          inherited Text: TText
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+          end
+        end
+      end
+    end
+  end
+  object Layout3: TLayout
+    Align = Top
+    Margins.Top = 12.000000000000000000
+    Position.Y = 104.000000000000000000
+    Size.Width = 1080.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    inline SelectBoxTopMapListStyle3: TSelectBoxTopMapListStyle
+      Align = Client
+      Size.Width = 1080.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      inherited Layout1: TLayout
+        inherited Rectangle: TRectangle
+          Size.Width = 1015.000000000000000000
+        end
+        inherited LeftRectangle: TRectangle
+          Margins.Left = 15.000000000000000000
+          Position.X = 15.000000000000000000
+          inherited Text: TText
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+          end
+        end
+      end
+    end
+  end
+end

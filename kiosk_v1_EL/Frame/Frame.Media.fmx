@@ -1,0 +1,63 @@
+object MediaFrame: TMediaFrame
+  Size.Width = 1080.000000000000000000
+  Size.Height = 620.000000000000000000
+  Size.PlatformDefault = False
+  OnClick = Rectangle1Click
+  object Layout: TLayout
+    Align = Client
+    HitTest = True
+    Size.Width = 1080.000000000000000000
+    Size.Height = 620.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    OnClick = Rectangle1Click
+    object Rectangle1: TRectangle
+      Align = Client
+      Fill.Color = claNull
+      HitTest = False
+      Margins.Top = -10.000000000000000000
+      Size.Width = 1080.000000000000000000
+      Size.Height = 630.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Thickness = 0.000000000000000000
+      OnClick = Rectangle1Click
+      object MediaPlayer1: TMediaPlayer
+        Left = 176
+        Top = 200
+      end
+      object MediaPlayerControl1: TMediaPlayerControl
+        OnGesture = MediaPlayerControl1Gesture
+        OnTap = MediaPlayerControl1Tap
+        Size.Width = 1080.000000000000000000
+        Size.Height = 630.000000000000000000
+        Size.PlatformDefault = False
+        Align = Client
+        MediaPlayer = MediaPlayer1
+      end
+    end
+  end
+  object Timer: TTimer
+    Enabled = False
+    Interval = 10
+    OnTimer = TimerTimer
+    Left = 296
+    Top = 416
+  end
+  object Image: TImage
+    MultiResBitmap.LoadSize = 2
+    MultiResBitmap = <
+      item
+      end>
+    Align = Client
+    Size.Width = 1080.000000000000000000
+    Size.Height = 620.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object Timer1: TTimer
+    Enabled = False
+    Interval = 10000
+    OnTimer = Timer1Timer
+    Left = 344
+    Top = 416
+  end
+end

@@ -1,0 +1,738 @@
+object VirtualKeyboardQwertyStyle: TVirtualKeyboardQwertyStyle
+  Size.Width = 1080.000000000000000000
+  Size.Height = 793.000000000000000000
+  Size.PlatformDefault = False
+  object Rectangle: TRectangle
+    Align = Client
+    Fill.Color = xFFE9E9E9
+    Size.Width = 1080.000000000000000000
+    Size.Height = 793.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Kind = None
+    object Layout1: TLayout
+      Align = Top
+      Margins.Left = 26.000000000000000000
+      Margins.Top = 25.000000000000000000
+      Position.X = 26.000000000000000000
+      Position.Y = 25.000000000000000000
+      Size.Width = 1054.000000000000000000
+      Size.Height = 120.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      inline Key1: TVirtualKeyboardQwertyKeyStyle
+        Align = Left
+        Size.Width = 68.000000000000000000
+        Size.Height = 120.000000000000000000
+        Size.PlatformDefault = False
+        inherited Rectangle: TRectangle
+          Size.Width = 68.000000000000000000
+          Size.Height = 120.000000000000000000
+        end
+      end
+      inline Key2: TVirtualKeyboardQwertyKeyStyle
+        Align = Left
+        Margins.Left = 12.000000000000000000
+        Position.X = 80.000000000000000000
+        Size.Width = 68.000000000000000000
+        Size.Height = 120.000000000000000000
+        Size.PlatformDefault = False
+        inherited Rectangle: TRectangle
+          Size.Width = 68.000000000000000000
+          Size.Height = 120.000000000000000000
+        end
+      end
+      inline Key3: TVirtualKeyboardQwertyKeyStyle
+        Align = Left
+        Margins.Left = 12.000000000000000000
+        Position.X = 160.000000000000000000
+        Size.Width = 68.000000000000000000
+        Size.Height = 120.000000000000000000
+        Size.PlatformDefault = False
+        inherited Rectangle: TRectangle
+          Size.Width = 68.000000000000000000
+          Size.Height = 120.000000000000000000
+        end
+      end
+      inline Key4: TVirtualKeyboardQwertyKeyStyle
+        Align = Left
+        Margins.Left = 12.000000000000000000
+        Position.X = 240.000000000000000000
+        Size.Width = 68.000000000000000000
+        Size.Height = 120.000000000000000000
+        Size.PlatformDefault = False
+        inherited Rectangle: TRectangle
+          Size.Width = 68.000000000000000000
+          Size.Height = 120.000000000000000000
+        end
+      end
+      inline Key5: TVirtualKeyboardQwertyKeyStyle
+        Align = Left
+        Margins.Left = 12.000000000000000000
+        Position.X = 320.000000000000000000
+        Size.Width = 68.000000000000000000
+        Size.Height = 120.000000000000000000
+        Size.PlatformDefault = False
+        inherited Rectangle: TRectangle
+          Size.Width = 68.000000000000000000
+          Size.Height = 120.000000000000000000
+        end
+      end
+      inline Key6: TVirtualKeyboardQwertyKeyStyle
+        Align = Left
+        Margins.Left = 12.000000000000000000
+        Position.X = 400.000000000000000000
+        Size.Width = 68.000000000000000000
+        Size.Height = 120.000000000000000000
+        Size.PlatformDefault = False
+        inherited Rectangle: TRectangle
+          Size.Width = 68.000000000000000000
+          Size.Height = 120.000000000000000000
+        end
+      end
+      inline Key7: TVirtualKeyboardQwertyKeyStyle
+        Align = Left
+        Margins.Left = 12.000000000000000000
+        Position.X = 480.000000000000000000
+        Size.Width = 68.000000000000000000
+        Size.Height = 120.000000000000000000
+        Size.PlatformDefault = False
+        inherited Rectangle: TRectangle
+          Size.Width = 68.000000000000000000
+          Size.Height = 120.000000000000000000
+        end
+      end
+      inline Key8: TVirtualKeyboardQwertyKeyStyle
+        Align = Left
+        Margins.Left = 12.000000000000000000
+        Position.X = 560.000000000000000000
+        Size.Width = 68.000000000000000000
+        Size.Height = 120.000000000000000000
+        Size.PlatformDefault = False
+        inherited Rectangle: TRectangle
+          Size.Width = 68.000000000000000000
+          Size.Height = 120.000000000000000000
+        end
+      end
+      inline Key10: TVirtualKeyboardQwertyKeyStyle
+        Align = Left
+        Margins.Left = 12.000000000000000000
+        Position.X = 720.000000000000000000
+        Size.Width = 68.000000000000000000
+        Size.Height = 120.000000000000000000
+        Size.PlatformDefault = False
+        inherited Rectangle: TRectangle
+          Size.Width = 68.000000000000000000
+          Size.Height = 120.000000000000000000
+        end
+      end
+      inline Key12: TVirtualKeyboardQwertyKeyStyle
+        Align = Left
+        Margins.Left = 12.000000000000000000
+        Position.X = 880.000000000000000000
+        Size.Width = 68.000000000000000000
+        Size.Height = 120.000000000000000000
+        Size.PlatformDefault = False
+        inherited Rectangle: TRectangle
+          Size.Width = 68.000000000000000000
+          Size.Height = 120.000000000000000000
+        end
+      end
+      inline Key9: TVirtualKeyboardQwertyKeyStyle
+        Align = Left
+        Margins.Left = 12.000000000000000000
+        Position.X = 640.000000000000000000
+        Size.Width = 68.000000000000000000
+        Size.Height = 120.000000000000000000
+        Size.PlatformDefault = False
+        inherited Rectangle: TRectangle
+          Size.Width = 68.000000000000000000
+          Size.Height = 120.000000000000000000
+        end
+      end
+      inline Key11: TVirtualKeyboardQwertyKeyStyle
+        Align = Left
+        Margins.Left = 12.000000000000000000
+        Position.X = 800.000000000000000000
+        Size.Width = 68.000000000000000000
+        Size.Height = 120.000000000000000000
+        Size.PlatformDefault = False
+        inherited Rectangle: TRectangle
+          Size.Width = 68.000000000000000000
+          Size.Height = 120.000000000000000000
+        end
+      end
+      inline Key13: TVirtualKeyboardQwertyKeyStyle
+        Align = Left
+        Margins.Left = 12.000000000000000000
+        Position.X = 960.000000000000000000
+        Size.Width = 68.000000000000000000
+        Size.Height = 120.000000000000000000
+        Size.PlatformDefault = False
+        inherited Rectangle: TRectangle
+          Size.Width = 68.000000000000000000
+          Size.Height = 120.000000000000000000
+        end
+      end
+    end
+    object Layout2: TLayout
+      Align = Top
+      Margins.Left = 105.000000000000000000
+      Margins.Top = 20.000000000000000000
+      Position.X = 105.000000000000000000
+      Position.Y = 339.000000000000000000
+      Size.Width = 975.000000000000000000
+      Size.Height = 154.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      inline Key27: TVirtualKeyboardQwertyKeyStyle
+        Align = Left
+        Size.Width = 68.000000000000000000
+        Size.Height = 154.000000000000000000
+        Size.PlatformDefault = False
+        inherited Rectangle: TRectangle
+          Size.Width = 68.000000000000000000
+        end
+      end
+      inline Key28: TVirtualKeyboardQwertyKeyStyle
+        Align = Left
+        Margins.Left = 12.000000000000000000
+        Position.X = 80.000000000000000000
+        Size.Width = 68.000000000000000000
+        Size.Height = 154.000000000000000000
+        Size.PlatformDefault = False
+        inherited Rectangle: TRectangle
+          Size.Width = 68.000000000000000000
+        end
+      end
+      inline Key31: TVirtualKeyboardQwertyKeyStyle
+        Align = Left
+        Margins.Left = 12.000000000000000000
+        Position.X = 320.000000000000000000
+        Size.Width = 68.000000000000000000
+        Size.Height = 154.000000000000000000
+        Size.PlatformDefault = False
+        inherited Rectangle: TRectangle
+          Size.Width = 68.000000000000000000
+        end
+      end
+      inline Key32: TVirtualKeyboardQwertyKeyStyle
+        Align = Left
+        Margins.Left = 12.000000000000000000
+        Position.X = 400.000000000000000000
+        Size.Width = 68.000000000000000000
+        Size.Height = 154.000000000000000000
+        Size.PlatformDefault = False
+        inherited Rectangle: TRectangle
+          Size.Width = 68.000000000000000000
+        end
+      end
+      inline Key33: TVirtualKeyboardQwertyKeyStyle
+        Align = Left
+        Margins.Left = 12.000000000000000000
+        Position.X = 480.000000000000000000
+        Size.Width = 68.000000000000000000
+        Size.Height = 154.000000000000000000
+        Size.PlatformDefault = False
+        inherited Rectangle: TRectangle
+          Size.Width = 68.000000000000000000
+        end
+      end
+      inline Key34: TVirtualKeyboardQwertyKeyStyle
+        Align = Left
+        Margins.Left = 12.000000000000000000
+        Position.X = 560.000000000000000000
+        Size.Width = 68.000000000000000000
+        Size.Height = 154.000000000000000000
+        Size.PlatformDefault = False
+        inherited Rectangle: TRectangle
+          Size.Width = 68.000000000000000000
+        end
+      end
+      inline Key35: TVirtualKeyboardQwertyKeyStyle
+        Align = Left
+        Margins.Left = 12.000000000000000000
+        Position.X = 640.000000000000000000
+        Size.Width = 68.000000000000000000
+        Size.Height = 154.000000000000000000
+        Size.PlatformDefault = False
+        inherited Rectangle: TRectangle
+          Size.Width = 68.000000000000000000
+        end
+      end
+      inline Key36: TVirtualKeyboardQwertyKeyStyle
+        Align = Left
+        Margins.Left = 12.000000000000000000
+        Position.X = 720.000000000000000000
+        Size.Width = 68.000000000000000000
+        Size.Height = 154.000000000000000000
+        Size.PlatformDefault = False
+        inherited Rectangle: TRectangle
+          Size.Width = 68.000000000000000000
+        end
+      end
+      inline Key29: TVirtualKeyboardQwertyKeyStyle
+        Align = Left
+        Margins.Left = 12.000000000000000000
+        Position.X = 160.000000000000000000
+        Size.Width = 68.000000000000000000
+        Size.Height = 154.000000000000000000
+        Size.PlatformDefault = False
+        inherited Rectangle: TRectangle
+          Size.Width = 68.000000000000000000
+        end
+      end
+      inline Key37: TVirtualKeyboardQwertyKeyStyle
+        Align = Left
+        Margins.Left = 12.000000000000000000
+        Position.X = 800.000000000000000000
+        Size.Width = 68.000000000000000000
+        Size.Height = 154.000000000000000000
+        Size.PlatformDefault = False
+        inherited Rectangle: TRectangle
+          Size.Width = 68.000000000000000000
+        end
+      end
+      inline Key30: TVirtualKeyboardQwertyKeyStyle
+        Align = Left
+        Margins.Left = 12.000000000000000000
+        Position.X = 240.000000000000000000
+        Size.Width = 68.000000000000000000
+        Size.Height = 154.000000000000000000
+        Size.PlatformDefault = False
+        inherited Rectangle: TRectangle
+          Size.Width = 68.000000000000000000
+        end
+      end
+    end
+    object Layout3: TLayout
+      Align = Top
+      Margins.Left = 26.000000000000000000
+      Margins.Top = 20.000000000000000000
+      Position.X = 26.000000000000000000
+      Position.Y = 165.000000000000000000
+      Size.Width = 1054.000000000000000000
+      Size.Height = 154.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      inline Key16: TVirtualKeyboardQwertyKeyStyle
+        Align = Left
+        Margins.Left = 12.000000000000000000
+        Position.X = 160.000000000000000000
+        Size.Width = 68.000000000000000000
+        Size.Height = 154.000000000000000000
+        Size.PlatformDefault = False
+        inherited Rectangle: TRectangle
+          Size.Width = 68.000000000000000000
+        end
+      end
+      inline Key23: TVirtualKeyboardQwertyKeyStyle
+        Align = Left
+        Margins.Left = 12.000000000000000000
+        Position.X = 720.000000000000000000
+        Size.Width = 68.000000000000000000
+        Size.Height = 154.000000000000000000
+        Size.PlatformDefault = False
+        inherited Rectangle: TRectangle
+          Size.Width = 68.000000000000000000
+        end
+      end
+      inline Key25: TVirtualKeyboardQwertyKeyStyle
+        Align = Left
+        Margins.Left = 12.000000000000000000
+        Position.X = 880.000000000000000000
+        Size.Width = 68.000000000000000000
+        Size.Height = 154.000000000000000000
+        Size.PlatformDefault = False
+        inherited Rectangle: TRectangle
+          Size.Width = 68.000000000000000000
+        end
+      end
+      inline Key14: TVirtualKeyboardQwertyKeyStyle
+        Align = Left
+        Size.Width = 68.000000000000000000
+        Size.Height = 154.000000000000000000
+        Size.PlatformDefault = False
+        inherited Rectangle: TRectangle
+          Size.Width = 68.000000000000000000
+        end
+      end
+      inline Key17: TVirtualKeyboardQwertyKeyStyle
+        Align = Left
+        Margins.Left = 12.000000000000000000
+        Position.X = 240.000000000000000000
+        Size.Width = 68.000000000000000000
+        Size.Height = 154.000000000000000000
+        Size.PlatformDefault = False
+        inherited Rectangle: TRectangle
+          Size.Width = 68.000000000000000000
+        end
+      end
+      inline Key18: TVirtualKeyboardQwertyKeyStyle
+        Align = Left
+        Margins.Left = 12.000000000000000000
+        Position.X = 320.000000000000000000
+        Size.Width = 68.000000000000000000
+        Size.Height = 154.000000000000000000
+        Size.PlatformDefault = False
+        inherited Rectangle: TRectangle
+          Size.Width = 68.000000000000000000
+        end
+      end
+      inline Key20: TVirtualKeyboardQwertyKeyStyle
+        Align = Left
+        Margins.Left = 12.000000000000000000
+        Position.X = 480.000000000000000000
+        Size.Width = 68.000000000000000000
+        Size.Height = 154.000000000000000000
+        Size.PlatformDefault = False
+        inherited Rectangle: TRectangle
+          Size.Width = 68.000000000000000000
+        end
+      end
+      inline Key15: TVirtualKeyboardQwertyKeyStyle
+        Align = Left
+        Margins.Left = 12.000000000000000000
+        Position.X = 80.000000000000000000
+        Size.Width = 68.000000000000000000
+        Size.Height = 154.000000000000000000
+        Size.PlatformDefault = False
+        inherited Rectangle: TRectangle
+          Size.Width = 68.000000000000000000
+        end
+      end
+      inline Key19: TVirtualKeyboardQwertyKeyStyle
+        Align = Left
+        Margins.Left = 12.000000000000000000
+        Position.X = 400.000000000000000000
+        Size.Width = 68.000000000000000000
+        Size.Height = 154.000000000000000000
+        Size.PlatformDefault = False
+        inherited Rectangle: TRectangle
+          Size.Width = 68.000000000000000000
+        end
+      end
+      inline Key21: TVirtualKeyboardQwertyKeyStyle
+        Align = Left
+        Margins.Left = 12.000000000000000000
+        Position.X = 560.000000000000000000
+        Size.Width = 68.000000000000000000
+        Size.Height = 154.000000000000000000
+        Size.PlatformDefault = False
+        inherited Rectangle: TRectangle
+          Size.Width = 68.000000000000000000
+        end
+      end
+      inline Key22: TVirtualKeyboardQwertyKeyStyle
+        Align = Left
+        Margins.Left = 12.000000000000000000
+        Position.X = 640.000000000000000000
+        Size.Width = 68.000000000000000000
+        Size.Height = 154.000000000000000000
+        Size.PlatformDefault = False
+        inherited Rectangle: TRectangle
+          Size.Width = 68.000000000000000000
+        end
+      end
+      inline Key24: TVirtualKeyboardQwertyKeyStyle
+        Align = Left
+        Margins.Left = 12.000000000000000000
+        Position.X = 800.000000000000000000
+        Size.Width = 68.000000000000000000
+        Size.Height = 154.000000000000000000
+        Size.PlatformDefault = False
+        inherited Rectangle: TRectangle
+          Size.Width = 68.000000000000000000
+        end
+      end
+      inline Key26: TVirtualKeyboardQwertyKeyStyle
+        Align = Left
+        Margins.Left = 12.000000000000000000
+        Position.X = 960.000000000000000000
+        Size.Width = 68.000000000000000000
+        Size.Height = 154.000000000000000000
+        Size.PlatformDefault = False
+        inherited Rectangle: TRectangle
+          Size.Width = 68.000000000000000000
+        end
+      end
+    end
+    object Layout4: TLayout
+      Align = Top
+      Margins.Left = 32.000000000000000000
+      Margins.Top = 20.000000000000000000
+      Position.X = 32.000000000000000000
+      Position.Y = 513.000000000000000000
+      Size.Width = 1048.000000000000000000
+      Size.Height = 154.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      inline VirtualKeyboardQwertyKeyBackStyle: TVirtualKeyboardQwertyKeyBackStyle
+        Align = Left
+        Margins.Left = 12.000000000000000000
+        Position.X = 914.000000000000000000
+        Size.Width = 102.000000000000000000
+        Size.Height = 154.000000000000000000
+        Size.PlatformDefault = False
+        inherited Image: TImage
+          MultiResBitmap = <
+            item
+              Width = 57
+              Height = 47
+              PNG = {
+                89504E470D0A1A0A0000000D49484452000000390000002F0806000000599762
+                03000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+                059B494441546843D59A4B4C5C6514C7E7010838A0C644022A2E202C4C08C3A3
+                541174D1A42E346AA3D886C4D65A42D3364D4C9AE8C2C498A8498D6E9A6826D5
+                A2B45134BAA8511B13AB581A0CB430805189AF10890B302E6AC0020A03FECEBD
+                E78EC36566CA3C3E3AFD2593EF3BE7CE70E73FE7FF3DEEBD783D9B487D7D7DB5
+                D7EB6DA53B453B100E8797EC2366F1696B1C04BEE6F3F97E41DC3BBCFA48FDDB
+                D8D878D83E6A16E3956C6868D8BABABA1A4260BDA6DC1498AEA8D14A363535ED
+                A26A432E813D2B2B2B5F6BDFC30F20F6358A3191624F04BCAFA17099782F55DB
+                4B7FDE4E59146B6B8CAC8B649C350783C130D53BA2290F95FB9EA6697474B4C7
+                CE6C2E591D93624F57F5041176880A46AB47953FE3477840C3B0B6D96680A112
+                1A1919F9296B2275F68C566F6E6E6E3E10081C8A573D974893FC83D03ABF0669
+                23F62C2B2BFBC4EFF73FAA29CB9EF9F9F9DBC7C6C6CE6A6A0DE5E5E51D9CBC46
+                4393E4F18A6454492AB2938A7CA0A1C33A7BBAE173B229B8414323F0F747B41B
+                4E5B642AF6BC1AE0B055EDA63EF1883D239148087B36684AD6BA1F10BC8B412E
+                B3684E102B32A525840F3E4673215620F4608DE65C12E866C322C59E341FD991
+                6D4F67714F36FE72812BDA359E3D9797977F64F66CCFE5EA6DD8AE89EC999797
+                D798CB02DD241489C05769B262CFF6F6763F5723DDFCCDDD9A4A0AEFEDE07554
+                C38C59B719107BCAE2CE6C195DDCC59EC5C5C5DB11F785A652A2B0B0F00493D3
+                530B0B0B0F555656FE363D3DFDAD1E5A87085C5C5C3CC5706863D350C47BBFD4
+                4329515151F18276D75632813D4F2E2D2D6DC9D09EE71118292A2AF2D3BE9DA8
+                A28E407D5F84D477F691CC888A547BC4B3E7931313137F6B3A2DD8209CA49AFB
+                9209750BE4FD7BF8DC7B7A38232C919CF03C767AD6CA80D8B3B4B4746B36772F
+                C9849A142878E504088CFD83EF72A20399562F119C6F0F82BA1D41B4DDB4FBB2
+                2D901FF0FF25044B466F3FD03F883D9F3025507057945497A90A3AF8A8E280F6
+                E512A9930BDFDB3534860A3DA1A18554D48440C1C71FEE954946029955A9E608
+                966AB38E1A42C760A7861662D944B36EA658134F4949C9012BB2B905D15FF145
+                0E6A9C555460EC32F1A6635DDA84CB4B2658221987A7A8E036BA97246666CDC7
+                C66FB0297FABBABAFA3AC96503B74019839C7B3FB16C148C098DAE93D8B60F61
+                DBD88C5FD094875D4F2782FBF872E59A4A9B78029D31283FB249A1519102BB9A
+                B1F1F1F1BBE81EB333D66D84165EC37C49C9A74532810E2685AE11E9C0099FC6
+                BEFB35146E45E839EC2B3786D3A12E994007B750BEC37D7A282312DEAD63631C
+                66833C84B847080B78E5D17F98DCCD35353567A7A6A656AC376E00D964CB669B
+                4BB4E389043AC8E65D36F108BC545555D5C59A1D5DD4532176837EC58B66ACD6
+                481342E0163B63ADA7E7F8128F63ED3F35957360F5D46F64F1A1E3345D766421
+                CF1877C838D638A7881519774CC643A67A9AD8E78977CCCECE0EC8A3018D7396
+                0D8B1410FA3A367D1071D6F3443611C5C4BD58FA15B9FAB7DE9483A4245260E2
+                38C3DAD9AA4FAA045CEB7D667272F24C6D6DED4D9ACB2952162950D18B08EB40
+                E8379A12EE2F2828B8180C06EFD4386748FB318103563D8260B9276B81F03976
+                4ABBF9213ED6D43AAE996721B13093C95A7ADA8E2C64667B11A1B256AD5BE710
+                B9598FEE846369D9D58D548D0AB6D0FDD5CE580E799E2A9F6E696929B1535705
+                793E19CA4A251D1055CB6C2BFFE9718FA68409E21DC3C3C33F6BECAEE4B5F3A4
+                3916ECFB1CCD4B7664F11727ECE0849F4B102B52962499B1A56F8AACD8D50DF6
+                7D992FBF5343E1C6F9F9F94F112F77048DFCB0C9302252A03A1FD2B4717DFABB
+                C472554173144BF7D25E2F39810A5FD6AE318CFFAAAC9B757EBF3F44F76E3BB3
+                96402090DFDFDFBFACA1118C6FC5666666FEE0F2A99B4B2DB9A572AFA61D0E0F
+                0E0E0E69DF189B3A3E9A9B9B6F63A96965BCCE50C101D315B4F178FE03B2CCF5
+                4377BC410C0000000049454E44AE426082}
+              FileName = 
+                'C:\Users\Feelple\Projects\SolbiPos\MegaStudy_Realtime\Design\'#50696#51228'\' +
+                'png\back.png'
+            end>
+        end
+      end
+      inline VirtualKeyboardQwertyKeyShiftStyle: TVirtualKeyboardQwertyKeyShiftStyle
+        Align = Left
+        Size.Width = 102.000000000000000000
+        Size.Height = 154.000000000000000000
+        Size.PlatformDefault = False
+        inherited Image: TImage
+          MultiResBitmap = <
+            item
+              Width = 41
+              Height = 50
+              PNG = {
+                89504E470D0A1A0A0000000D4948445200000029000000320806000000C171F2
+                AE000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+                0499494441546843ED995D685B6518C793B4A5EDFA71E5459BEAA0B42074C8D6
+                B453C479256CEABAAD13991B432F36181354E640DD2E14BC72BA2FF1426F5627
+                CA60ACA8C83A14DDBA150676F693A91D8CBACD8D36C5E958A88CC69AC6DFF3E6
+                E9215D4E9A9CE46DF0227F38BCCFFF7CBDFFF3FE9FE77D734EFC3E8B686B6B5B
+                168FC7D7103EC676717878F8BC399027AC8944E05E9AC309E6E0D4D0D0D00B1A
+                E78C126DF3427B7BFB469AE309B6002B82C1E09D7038FC93F29C90F74832828F
+                D2FCC816103E3737F73DCDA54020F0B6700129F014D6F72AF50C73E35C110A85
+                1E41C0A784E63EB158EC5A7979F9B6E6E6E67711EBE4A3DFEFFF42CE55EA1979
+                8944E027085821F1F4F4F43DE2CDFDFDFD77BABBBB63C4DBD9FD871C03413957
+                63CFC8592436BF8EA54F288D575555ED181919B9ACDC87BD6184BD4818172EE7
+                72CD6E89BD22A7C2696D6DDDC0487DA654F2F008028F2A7540C1FC46E194133E
+                99D8E3EB686868B8303939F9BBF2ACE07924A550A2D1E8D74A45E00FE4E05B4A
+                53505D5DFD0EB97A51A99C7FDC6B7E7A1519A093AECACA4AE300765E2F2D2DDD
+                2639688EBAA0AFAFEFDF929292EDB3B3B37F09C78146AFF9E9C96E46B18B4ED6
+                492C8582C0B5E4DE75737011607B04DBAF70ED56288D7F39B6DFC2F691C4198B
+                236B9158B4879BEF53EAABA8A8780981E79466C4D4D4D4D5FAFAFA5AEEF1B8EE
+                DA84F0733CC04DE5699195DD08ECE0E64E6160D791C1C1C1934AB3C6CCCCCC7E
+                D2C5597D888F91CF52588B22A3482914ACFD4AA9083CDBD4D4F4A6524F181B1B
+                FBA7ACAC4C2CBF2B9C69E9E19A9A9A9459E17E64B41B4BCEB08A0495DEE0E99F
+                EEEDEDFD5BB9674C4C4CDC251FC709B708C7A1D5F06BE4A733C7DE8F4547129B
+                BB68564AAC2BCA73A3A3A3B785E70352E54B9A8F13CCB8F33973EF7CAEA620AD
+                486C7E15513B94CA7CB78B9B67558DD9201289ECC515E77E589F765A721589C0
+                67693E4A30F3A447A9E4134AAD607C7C3CCA14B615A1D3BA6B25FDBAE6678A48
+                29149AE415E53C85F28652AB181818B88A5B2F2B15ECC1F6941FC92985535757
+                779A0B1F949855E226F1DA7C0A251398277F66FE7C887E42C2699FA758BF65FF
+                8439012C18490AE518B9D12AB1AE289B6D144A2620EC3552EA57A5F2BB74417E
+                3A22B1F9154EDEA9D4575B5BBB9B3C1C56BAA4E03DE81E69B5450646386B7D08
+                DBDF330781B19B77946768920BE3432EFC40E3828065F3766363E314E126E10C
+                D81AE6CF5F983FAF989164A89DE1E5892E30DD2C49A16402539CBC8A388335AF
+                CBAFEBF26921E4C22D9AB642E4613AB4B4B454B3C20DCA92A9BB3A45E40144CE
+                FF68DD473CA4B1014F338AF57F2AB50E6AE101FA5CA5D4003757B1EFA0D2430B
+                46D20D88ECA07ECE28B50EFA5F4FFF3D4ADDD01940400FCA974C449EF80E17BF
+                3185C34B540723B681ED7DB6B3B299530A8CA4BE0FB1752250661DF72F18CC51
+                3D24EE7A89B9A860768BA33260E6401252D6EEFF238A226DA128D2168A226DA1
+                28D2168A226DA128D2168A226DA128D2165C7F99F30627DFC69D2F0805C47E5E
+                190E68EC20DD48CA4BB9A73F842C40FA73FD46E9FA393A1C0E4783C1A0FC351C
+                89C56215BCEF2C4F1CB10FF9234A3FA0EE64142389BDC9F0F9FE039A70DF3342
+                B8C3A50000000049454E44AE426082}
+              FileName = 
+                'C:\Users\Feelple\Projects\SolbiPos\MegaStudy_Realtime\Design\'#50696#51228'\' +
+                'png\shift.png'
+            end>
+        end
+      end
+      inline Key42: TVirtualKeyboardQwertyKeyStyle
+        Align = Left
+        Margins.Left = 12.000000000000000000
+        Position.X = 434.000000000000000000
+        Size.Width = 68.000000000000000000
+        Size.Height = 154.000000000000000000
+        Size.PlatformDefault = False
+        inherited Rectangle: TRectangle
+          Size.Width = 68.000000000000000000
+        end
+      end
+      inline Key43: TVirtualKeyboardQwertyKeyStyle
+        Align = Left
+        Margins.Left = 12.000000000000000000
+        Position.X = 514.000000000000000000
+        Size.Width = 68.000000000000000000
+        Size.Height = 154.000000000000000000
+        Size.PlatformDefault = False
+        inherited Rectangle: TRectangle
+          Size.Width = 68.000000000000000000
+        end
+      end
+      inline Key46: TVirtualKeyboardQwertyKeyStyle
+        Align = Left
+        Margins.Left = 12.000000000000000000
+        Position.X = 754.000000000000000000
+        Size.Width = 68.000000000000000000
+        Size.Height = 154.000000000000000000
+        Size.PlatformDefault = False
+        inherited Rectangle: TRectangle
+          Size.Width = 68.000000000000000000
+        end
+      end
+      inline Key47: TVirtualKeyboardQwertyKeyStyle
+        Align = Left
+        Margins.Left = 12.000000000000000000
+        Position.X = 834.000000000000000000
+        Size.Width = 68.000000000000000000
+        Size.Height = 154.000000000000000000
+        Size.PlatformDefault = False
+        inherited Rectangle: TRectangle
+          Size.Width = 68.000000000000000000
+        end
+      end
+      inline Key44: TVirtualKeyboardQwertyKeyStyle
+        Align = Left
+        Margins.Left = 12.000000000000000000
+        Position.X = 594.000000000000000000
+        Size.Width = 68.000000000000000000
+        Size.Height = 154.000000000000000000
+        Size.PlatformDefault = False
+        inherited Rectangle: TRectangle
+          Size.Width = 68.000000000000000000
+        end
+      end
+      inline Key40: TVirtualKeyboardQwertyKeyStyle
+        Align = Left
+        Margins.Left = 12.000000000000000000
+        Position.X = 274.000000000000000000
+        Size.Width = 68.000000000000000000
+        Size.Height = 154.000000000000000000
+        Size.PlatformDefault = False
+        inherited Rectangle: TRectangle
+          Size.Width = 68.000000000000000000
+        end
+      end
+      inline Key38: TVirtualKeyboardQwertyKeyStyle
+        Align = Left
+        Margins.Left = 12.000000000000000000
+        Position.X = 114.000000000000000000
+        Size.Width = 68.000000000000000000
+        Size.Height = 154.000000000000000000
+        Size.PlatformDefault = False
+        inherited Rectangle: TRectangle
+          Size.Width = 68.000000000000000000
+        end
+      end
+      inline Key45: TVirtualKeyboardQwertyKeyStyle
+        Align = Left
+        Margins.Left = 12.000000000000000000
+        Position.X = 674.000000000000000000
+        Size.Width = 68.000000000000000000
+        Size.Height = 154.000000000000000000
+        Size.PlatformDefault = False
+        inherited Rectangle: TRectangle
+          Size.Width = 68.000000000000000000
+        end
+      end
+      inline Key41: TVirtualKeyboardQwertyKeyStyle
+        Align = Left
+        Margins.Left = 12.000000000000000000
+        Position.X = 354.000000000000000000
+        Size.Width = 68.000000000000000000
+        Size.Height = 154.000000000000000000
+        Size.PlatformDefault = False
+        inherited Rectangle: TRectangle
+          Size.Width = 68.000000000000000000
+        end
+      end
+      inline Key39: TVirtualKeyboardQwertyKeyStyle
+        Align = Left
+        Margins.Left = 12.000000000000000000
+        Position.X = 194.000000000000000000
+        Size.Width = 68.000000000000000000
+        Size.Height = 154.000000000000000000
+        Size.PlatformDefault = False
+        inherited Rectangle: TRectangle
+          Size.Width = 68.000000000000000000
+        end
+      end
+    end
+    object Layout5: TLayout
+      Align = Top
+      Margins.Left = 240.000000000000000000
+      Margins.Top = 20.000000000000000000
+      Position.X = 240.000000000000000000
+      Position.Y = 687.000000000000000000
+      Size.Width = 840.000000000000000000
+      Size.Height = 80.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 4
+      inline VirtualKeyboardQwertyKeySpaceStyle: TVirtualKeyboardQwertyKeyStyle
+        Align = Left
+        Size.Width = 600.000000000000000000
+        Size.Height = 80.000000000000000000
+        Size.PlatformDefault = False
+        inherited Rectangle: TRectangle
+          Size.Width = 600.000000000000000000
+          Size.Height = 80.000000000000000000
+        end
+      end
+      inline VirtualKeyboardQwertyKeyIMEStyle: TVirtualKeyboardQwertyKeyIMEStyle
+        Align = Left
+        Margins.Left = 15.000000000000000000
+        Position.X = 615.000000000000000000
+        Size.Width = 155.000000000000000000
+        Size.Height = 80.000000000000000000
+        Size.PlatformDefault = False
+        inherited Rectangle: TRectangle
+          Size.Width = 155.000000000000000000
+          Size.Height = 80.000000000000000000
+        end
+      end
+    end
+  end
+end

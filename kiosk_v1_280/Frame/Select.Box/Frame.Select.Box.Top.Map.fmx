@@ -1,0 +1,308 @@
+object SelectBoxTopMap: TSelectBoxTopMap
+  Size.Width = 1080.000000000000000000
+  Size.Height = 248.000000000000000000
+  Size.PlatformDefault = False
+  object Layout1: TLayout
+    Align = Top
+    Size.Width = 1080.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    inline SelectBoxTopMapListStyle1: TSelectBoxTopMapListStyle
+      Align = Client
+      Size.Width = 1080.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      inherited Layout1: TLayout
+        Align = Client
+        Size.Width = 1080.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        inherited Rectangle: TRectangle
+          Fill.Color = claNull
+          Position.X = 50.000000000000000000
+          Size.Width = 1015.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          Stroke.Color = claRed
+          Stroke.Thickness = 0.000000000000000000
+          inherited RightRectangle: TRectangle
+            Align = Center
+            Fill.Color = claNull
+            Size.Width = 50.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            Stroke.Color = claRed
+            Stroke.Thickness = 0.000000000000000000
+          end
+        end
+        inherited LeftRectangle: TRectangle
+          Align = Left
+          Fill.Color = claNull
+          Margins.Left = 15.000000000000000000
+          Position.X = 15.000000000000000000
+          Size.Width = 50.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          Stroke.Color = claBlue
+          Stroke.Thickness = 0.000000000000000000
+          inherited Text: TText
+            Align = Client
+            Size.Width = 50.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Size = 30.000000000000000000
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+            TextSettings.FontColor = claWhite
+            TextSettings.HorzAlign = Trailing
+          end
+        end
+      end
+    end
+  end
+  object Layout2: TLayout
+    Align = Top
+    Margins.Top = 12.000000000000000000
+    Position.Y = 52.000000000000000000
+    Size.Width = 1080.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    inline SelectBoxTopMapListStyle2: TSelectBoxTopMapListStyle
+      Align = Client
+      Size.Width = 1080.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      inherited Layout1: TLayout
+        Align = Client
+        Size.Width = 1080.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        inherited Rectangle: TRectangle
+          Fill.Color = claNull
+          Position.X = 50.000000000000000000
+          Size.Width = 1015.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          Stroke.Color = claRed
+          Stroke.Thickness = 0.000000000000000000
+          inherited RightRectangle: TRectangle
+            Align = Center
+            Fill.Color = claNull
+            Size.Width = 50.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            Stroke.Color = claRed
+            Stroke.Thickness = 0.000000000000000000
+          end
+        end
+        inherited LeftRectangle: TRectangle
+          Align = Left
+          Fill.Color = claNull
+          Margins.Left = 15.000000000000000000
+          Position.X = 15.000000000000000000
+          Size.Width = 50.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          Stroke.Color = claBlue
+          Stroke.Thickness = 0.000000000000000000
+          inherited Text: TText
+            Align = Client
+            Size.Width = 50.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Size = 30.000000000000000000
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+            TextSettings.FontColor = claWhite
+            TextSettings.HorzAlign = Trailing
+          end
+        end
+      end
+    end
+  end
+  object Layout3: TLayout
+    Align = Top
+    Margins.Top = 12.000000000000000000
+    Position.Y = 104.000000000000000000
+    Size.Width = 1080.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    inline SelectBoxTopMapListStyle3: TSelectBoxTopMapListStyle
+      Align = Client
+      Size.Width = 1080.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      inherited Layout1: TLayout
+        Align = Client
+        Size.Width = 1080.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        inherited Rectangle: TRectangle
+          Fill.Color = claNull
+          Position.X = 50.000000000000000000
+          Size.Width = 1015.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          Stroke.Color = claRed
+          Stroke.Thickness = 0.000000000000000000
+          inherited RightRectangle: TRectangle
+            Align = Center
+            Fill.Color = claNull
+            Size.Width = 50.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            Stroke.Color = claRed
+            Stroke.Thickness = 0.000000000000000000
+          end
+        end
+        inherited LeftRectangle: TRectangle
+          Align = Left
+          Fill.Color = claNull
+          Margins.Left = 15.000000000000000000
+          Position.X = 15.000000000000000000
+          Size.Width = 50.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          Stroke.Color = claBlue
+          Stroke.Thickness = 0.000000000000000000
+          inherited Text: TText
+            Align = Client
+            Size.Width = 50.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Size = 30.000000000000000000
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+            TextSettings.FontColor = claWhite
+            TextSettings.HorzAlign = Trailing
+          end
+        end
+      end
+    end
+  end
+  object Layout4: TLayout
+    Align = Top
+    Margins.Top = 12.000000000000000000
+    Position.Y = 156.000000000000000000
+    Size.Width = 1080.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    inline SelectBoxTopMapListStyle4: TSelectBoxTopMapListStyle
+      Align = Client
+      Size.Width = 1080.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      inherited Layout1: TLayout
+        Align = Client
+        Size.Width = 1080.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        inherited Rectangle: TRectangle
+          Fill.Color = claNull
+          Position.X = 50.000000000000000000
+          Size.Width = 1015.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          Stroke.Color = claRed
+          Stroke.Thickness = 0.000000000000000000
+          inherited RightRectangle: TRectangle
+            Align = Center
+            Fill.Color = claNull
+            Size.Width = 50.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            Stroke.Color = claRed
+            Stroke.Thickness = 0.000000000000000000
+          end
+        end
+        inherited LeftRectangle: TRectangle
+          Align = Left
+          Fill.Color = claNull
+          Margins.Left = 15.000000000000000000
+          Position.X = 15.000000000000000000
+          Size.Width = 50.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          Stroke.Color = claBlue
+          Stroke.Thickness = 0.000000000000000000
+          inherited Text: TText
+            Align = Client
+            Size.Width = 50.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Size = 30.000000000000000000
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+            TextSettings.FontColor = claWhite
+            TextSettings.HorzAlign = Trailing
+          end
+        end
+      end
+    end
+  end
+  object Layout5: TLayout
+    Align = Top
+    Margins.Top = 12.000000000000000000
+    Position.Y = 208.000000000000000000
+    Size.Width = 1080.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    inline SelectBoxTopMapListStyle5: TSelectBoxTopMapListStyle
+      Align = Client
+      Size.Width = 1080.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      inherited Layout1: TLayout
+        Align = Client
+        Size.Width = 1080.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        inherited Rectangle: TRectangle
+          Fill.Color = claNull
+          Position.X = 50.000000000000000000
+          Size.Width = 1015.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          Stroke.Color = claRed
+          Stroke.Thickness = 0.000000000000000000
+          inherited RightRectangle: TRectangle
+            Align = Center
+            Fill.Color = claNull
+            Size.Width = 50.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            Stroke.Color = claRed
+            Stroke.Thickness = 0.000000000000000000
+          end
+        end
+        inherited LeftRectangle: TRectangle
+          Align = Left
+          Fill.Color = claNull
+          Margins.Left = 15.000000000000000000
+          Position.X = 15.000000000000000000
+          Size.Width = 50.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          Stroke.Color = claBlue
+          Stroke.Thickness = 0.000000000000000000
+          inherited Text: TText
+            Align = Client
+            Size.Width = 50.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Size = 30.000000000000000000
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+            TextSettings.FontColor = claWhite
+            TextSettings.HorzAlign = Trailing
+          end
+        end
+      end
+    end
+  end
+end

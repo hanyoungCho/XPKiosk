@@ -1,0 +1,70 @@
+object MemberInfoProductItemStyle: TMemberInfoProductItemStyle
+  HitTest = False
+  Size.Width = 750.000000000000000000
+  Size.Height = 60.000000000000000000
+  Size.PlatformDefault = False
+  object Rectangle1: TRectangle
+    Align = Left
+    Fill.Color = claNull
+    HitTest = False
+    Size.Width = 410.000000000000000000
+    Size.Height = 60.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Color = xFF979797
+    Stroke.Thickness = 0.000000000000000000
+    object txtProductName: TText
+      Align = Client
+      HitTest = False
+      Size.Width = 410.000000000000000000
+      Size.Height = 60.000000000000000000
+      Size.PlatformDefault = False
+      Text = #51060#50857#44428#47749
+      TextSettings.Font.Family = 'Noto Sans CJK KR'
+      TextSettings.Font.Size = 28.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+    end
+  end
+  object Rectangle2: TRectangle
+    Align = Client
+    Fill.Color = claNull
+    HitTest = False
+    Size.Width = 80.000000000000000000
+    Size.Height = 60.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Color = xFF979797
+    Stroke.Thickness = 0.000000000000000000
+    object Text2: TText
+      Align = Contents
+      HitTest = False
+      Size.Width = 80.000000000000000000
+      Size.Height = 60.000000000000000000
+      Size.PlatformDefault = False
+      Text = #49688#47049
+      TextSettings.Font.Family = 'Noto Sans CJK KR'
+      TextSettings.Font.Size = 28.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+    end
+  end
+  object Rectangle3: TRectangle
+    Align = Right
+    Fill.Color = claNull
+    HitTest = False
+    Position.X = 490.000000000000000000
+    Size.Width = 260.000000000000000000
+    Size.Height = 60.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Color = xFF979797
+    Stroke.Thickness = 0.000000000000000000
+    object txtExpireDay: TText
+      Align = Client
+      HitTest = False
+      Size.Width = 260.000000000000000000
+      Size.Height = 60.000000000000000000
+      Size.PlatformDefault = False
+      Text = #47564#47308#51068#51088
+      TextSettings.Font.Family = 'Noto Sans CJK KR'
+      TextSettings.Font.Size = 28.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+    end
+  end
+end

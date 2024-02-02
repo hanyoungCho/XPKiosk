@@ -1,0 +1,50 @@
+object SelectBoxTopMapListStyle: TSelectBoxTopMapListStyle
+  Size.Width = 1080.000000000000000000
+  Size.Height = 40.000000000000000000
+  Size.PlatformDefault = False
+  object Layout1: TLayout
+    Align = Client
+    Size.Width = 1080.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object Rectangle: TRectangle
+      Fill.Color = claNull
+      Position.X = 50.000000000000000000
+      Size.Width = 1030.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Color = claRed
+      Stroke.Thickness = 0.000000000000000000
+      object RightRectangle: TRectangle
+        Align = Center
+        Fill.Color = claNull
+        Size.Width = 50.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Color = claRed
+        Stroke.Thickness = 0.000000000000000000
+      end
+    end
+    object LeftRectangle: TRectangle
+      Align = Left
+      Fill.Color = claNull
+      Size.Width = 50.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Color = claBlue
+      Stroke.Thickness = 0.000000000000000000
+      object Text: TText
+        Align = Client
+        Margins.Right = 20.000000000000000000
+        Size.Width = 30.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 30.000000000000000000
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TextSettings.FontColor = claWhite
+        TextSettings.HorzAlign = Trailing
+      end
+    end
+  end
+end
