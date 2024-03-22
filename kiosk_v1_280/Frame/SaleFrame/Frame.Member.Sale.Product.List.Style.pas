@@ -330,6 +330,9 @@ begin
         end;
       end;
 
+      if (AProduct.Alliance_code = '00007') then //스마틱스 일일상품 표시 제외
+        Continue;
+
       //제휴사
       if (Global.Config.Alliance = True) and (AProduct.Alliance_yn = True) then
       begin

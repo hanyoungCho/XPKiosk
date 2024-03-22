@@ -251,7 +251,7 @@ begin
   LocalDBInfo.DB_PORT := ConfigIni.ReadInteger('AD', 'DB_PORT', 3306);
   {$ENDIF}
   {$IFDEF DEBUG}
-  LocalDBInfo.DB_PORT := 3307;
+  LocalDBInfo.DB_PORT := 3306;
   {$ENDIF}
 
   {$IFDEF RELEASE}
@@ -270,7 +270,7 @@ begin
   Scanner.BaudRate := ConfigIni.ReadInteger('SCANNER', 'BaudRate', 0);
   {$ENDIF}
   {$IFDEF DEBUG}
-  Scanner.Port := 3;
+  Scanner.Port := 0;
   Scanner.BaudRate := 115200;
   {$ENDIF}
 

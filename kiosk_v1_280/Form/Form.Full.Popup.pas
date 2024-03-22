@@ -453,7 +453,7 @@ end;
 
 procedure TFullPopup.ComPortRxChar(Sender: TObject; Count: Integer);
 var
-  TempBuff: string;
+  TempBuff, sMsg: string;
   AMember: TMemberInfo;
   ADiscount: TDiscount;
 begin
@@ -537,11 +537,14 @@ begin
     else if Global.SaleModule.PromotionType = pttSmartix then // 스마틱스
     begin
       Log.D('Scan begin', '스마틱스');
-      if Global.SaleModule.ApplySmartix(FReadStr) then
+      if Global.SaleModule.ApplySmartix(True, FReadStr, sMsg) then  //   sRmsTkttypId    AProduct.Alliance_Item_Code
         ModalResult := mrOk
       else
       begin
-        Global.SBMessage.ShowMessageModalForm('등록되지 않은 티켓번호 입니다.');
+        if sMsg <> '' then
+          Global.SBMessage.ShowMessageModalForm(sMsg)
+        else
+          Global.SBMessage.ShowMessageModalForm('등록되지 않은 티켓번호 입니다.');
         ModalResult := mrCancel;
       end;
     end
@@ -919,7 +922,7 @@ begin
   try
     try
 
-      //chy test 여의도 룬골프
+      //chy test 회원
       //AMember.Code := 'T0001000000001';
       //AMember.Name := '조한용';
 
@@ -1798,6 +1801,7 @@ var
   panel: TPanel;
   bXGolfMember: boolean;
   MemberTemp: TMemberInfo;
+  sMsg: String;
 begin
   try
     if Work then
@@ -1849,7 +1853,7 @@ begin
                 bXGolfMember := True;
             end;
 
-            if Global.SaleModule.UCBioBSPHelper.SearchMemberFinger then
+            if Global.SaleModule.UCBioBSPHelper.SearchMemberFinger(sMsg) then
             begin
  
               if Global.SaleModule.AdvertPopupType = apMember then
@@ -1881,7 +1885,7 @@ begin
               Inc(FFingerRetry);
               if FFingerRetry > 2 then
               begin
-                Global.SBMessage.ShowMessageModalForm('일치하는 지문이 없습니다.');
+                Global.SBMessage.ShowMessageModalForm('일치하는 지문이 없습니다.' + #13 + sMsg);
                 //Log.D('FFingerRetry', '2 / 일치하는 지문이 없습니다');
                 FFingerRetry := 0;
 
@@ -1893,7 +1897,7 @@ begin
               end
               else
               begin
-                if Global.SBMessage.ShowMessageModalForm('일치하는 지문이 없습니다.', False, 30, True, True) then
+                if Global.SBMessage.ShowMessageModalForm('일치하는 지문이 없습니다.' + #13 + sMsg, False, 30, True, True) then
                   goto ReUnion
                 else
                 begin

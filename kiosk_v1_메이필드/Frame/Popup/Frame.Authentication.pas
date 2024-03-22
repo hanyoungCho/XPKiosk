@@ -171,8 +171,6 @@ begin
     end
     else
     begin
-      //chy test
-
       JsonText := '{"jobcode":"NP001",' +
                    '"carnum":"' + FKeyStr + '"}';
 
@@ -181,7 +179,6 @@ begin
       //Log.D('Nexpa Result', sResult);
 
       try
-
         MainJson := TJSONObject.ParseJSONValue(sResult) as TJSONObject;
 
         if MainJson.GetValue('resultcode').Value <> '0' then

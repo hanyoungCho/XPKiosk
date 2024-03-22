@@ -86,6 +86,7 @@ type
     imgPolicyAllNon: TImage;
     Rectangle4: TRectangle;
     txtPolicyCheck: TText;
+    txtStamp: TText;
     procedure recPolicyViewClick(Sender: TObject);
     procedure Rectangle5Click(Sender: TObject);
     procedure Rectangle1Click(Sender: TObject);

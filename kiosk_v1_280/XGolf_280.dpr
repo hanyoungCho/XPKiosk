@@ -130,7 +130,7 @@ begin
   try
     Application.Initialize;
     Application.CreateForm(TContainer, Container);
-  Application.Run;
+    Application.Run;
   finally
     ReleaseMutex(Mutex);
   end;

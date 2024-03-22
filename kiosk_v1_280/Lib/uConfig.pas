@@ -388,7 +388,7 @@ begin
   Print.BaudRate := 115200;
   Print.PrintType := 'SEWOO';
 
-  Scanner.Port := 0;
+  Scanner.Port := 5;
   //Scanner.BaudRate := 115200;
   Scanner.BaudRate := 9600;
 

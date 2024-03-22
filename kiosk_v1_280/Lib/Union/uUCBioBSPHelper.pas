@@ -55,7 +55,7 @@ type
     function Matching: Boolean; overload; //지문 매칭 조회
     function Matching(const AFingerWindow: HWND; ADataSet: TDataSet; const AFingerField, AValueField: string; var AErrMsg: string): Boolean; overload; //지문 매칭 조회
 
-    function SearchMemberFinger: Boolean;
+    function SearchMemberFinger(var AMsg: String): Boolean;
 
     property Active: Boolean read FActive default False;
     property DataSet: TDataSet read FDataSet write FDataSet;
@@ -294,7 +294,7 @@ begin
 end;
 
 //chy
-function TUCBioBSPHelper.SearchMemberFinger: Boolean;
+function TUCBioBSPHelper.SearchMemberFinger(var AMsg: String): Boolean;
 var
   Index: Integer;
   sFingerData: string;
@@ -313,67 +313,63 @@ begin
         raise Exception.Create('지문 인식장치를 사용할 수 없습니다.');
 
       FExtraction.Capture(UCBioAPI_FIR_PURPOSE_VERIFY);
-      FLastError := -1;
       FLastError := FExtraction.ErrorCode;
       if (FLastError <> UCBioAPIERROR_NONE) then
         raise Exception.Create('지문을 인식하지 못했습니다.' + #13#10 + FExtraction.ErrorDescription);
+    finally
+      FDevice.Close(UCBioAPI_DEVICE_ID_AUTO_DETECT);
+    end;
 
-      //Log.D('SearchMemberFinger', 'ErrorCode - ' + inttostr(FLastError));
+    FTextFIR := FExtraction.TextFIR;
 
-      FTextFIR := FExtraction.TextFIR;
-      //Log.D('SearchMemberFinger FTextFIR', FTextFIR);
+    for Index := 0 to Global.SaleModule.MemberUpdateList.Count - 1 do
+    begin
+      if not Global.SaleModule.MemberUpdateList[Index].Use then
+        Continue;
 
-      for Index := 0 to Global.SaleModule.MemberUpdateList.Count - 1 do
+      if Global.SaleModule.MemberUpdateList[Index].FingerStr = EmptyStr then
+        Continue;
+
+      FMatching.VerifyMatch(FTextFIR, Global.SaleModule.MemberUpdateList[Index].FingerStr);
+
+      if (VarToStr(FMatching.MatchingResult) = IntToStr(UCBioAPI_TRUE)) then
       begin
-        if not Global.SaleModule.MemberUpdateList[Index].Use then
+        Result := True;
+        Log.D('MemberUpdateList 회원명', Global.SaleModule.MemberUpdateList[Index].Name);
+        Global.SaleModule.Member := Global.SaleModule.MemberUpdateList[Index];
+        Break;
+      end;
+    end;
+
+    if not Result then
+    begin
+      for Index := 0 to Global.SaleModule.MemberList.Count - 1 do
+      begin
+        if not Global.SaleModule.MemberList[Index].Use then
           Continue;
 
-        if Global.SaleModule.MemberUpdateList[Index].FingerStr = EmptyStr then
+        if Global.SaleModule.MemberList[Index].FingerStr = EmptyStr then
           Continue;
 
-        FMatching.VerifyMatch(FTextFIR, Global.SaleModule.MemberUpdateList[Index].FingerStr);
+        FMatching.VerifyMatch(FTextFIR, Global.SaleModule.MemberList[Index].FingerStr);
 
         if (VarToStr(FMatching.MatchingResult) = IntToStr(UCBioAPI_TRUE)) then
         begin
+          Log.D('MemberList 회원명', Global.SaleModule.MemberList[Index].Name);
           Result := True;
-          Log.D('MemberUpdateList 회원명', Global.SaleModule.MemberUpdateList[Index].Name);
-          Global.SaleModule.Member := Global.SaleModule.MemberUpdateList[Index];
+          Global.SaleModule.Member := Global.SaleModule.MemberList[Index];
           Break;
         end;
       end;
-
-      if not Result then
-      begin
-        for Index := 0 to Global.SaleModule.MemberList.Count - 1 do
-        begin
-          if not Global.SaleModule.MemberList[Index].Use then
-            Continue;
-
-          if Global.SaleModule.MemberList[Index].FingerStr = EmptyStr then
-            Continue;
-
-          FMatching.VerifyMatch(FTextFIR, Global.SaleModule.MemberList[Index].FingerStr);
-
-          if (VarToStr(FMatching.MatchingResult) = IntToStr(UCBioAPI_TRUE)) then
-          begin
-            Log.D('MemberList 회원명', Global.SaleModule.MemberList[Index].Name);
-            Result := True;
-            Global.SaleModule.Member := Global.SaleModule.MemberList[Index];
-            Break;
-          end;
-        end;
-      end;
-    except
-      on E: Exception do
-      begin
-        FErrorMessage := E.Message;
-        Log.D('SearchMemberFinger Exception', FErrorMessage);
-      end
     end;
-  finally
-    FDevice.Close(UCBioAPI_DEVICE_ID_AUTO_DETECT);
+  except
+    on E: Exception do
+    begin
+      FErrorMessage := E.Message;
+      AMsg := E.Message;
+      Log.D('SearchMemberFinger Exception', FErrorMessage);
+    end
   end;
-
 
 end;
 

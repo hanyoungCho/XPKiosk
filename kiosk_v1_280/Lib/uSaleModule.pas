@@ -5,8 +5,10 @@ interface
 uses
   uConsts, uPrint, CPort, JSON, VCL.Forms, IdHTTP, System.Classes, Math, mmsystem,
   uStruct, System.SysUtils, uBiominiPlus2, IdGlobal, IdSSL, IdSSLOpenSSL, System.UITypes, System.DateUtils,
-  Generics.Collections, Uni, uVanDeamonModul, uPaycoNewModul, IdComponent, IdTCPConnection, IdTCPClient,
+  Generics.Collections, Uni, IdComponent, IdTCPConnection, IdTCPClient,
   uNitgen, IdURI,
+  { van }
+  uVanDeamonModul, uPaycoNewModul,
   //union
   uUCBioBSPHelper, uNBioBSPHelper;
 
@@ -227,6 +229,7 @@ type
     // 제휴사 멤버 코드
     FallianceCode: string;  //영수증 출력기준
     FallianceNumber: string;
+    FSmartixRmsTkttypId: String; // 스마틱스 권종코드
 
     //2020-12-29 라카만료일
     FLockerEndDay: String;
@@ -339,7 +342,7 @@ type
     //2020-12-15 아이코젠
     function ApplyIKozen(const AReadData: string): Boolean;
 
-    function ApplySmartix(const AReadData: string): Boolean;
+    function ApplySmartix(AIsApproval: Boolean; const AReadData: string; var AMsg: String): Boolean;
 
     //2020-12-14 리프레쉬골프
     function ApplyRefreshGolf(const AUserId: string): Boolean;
@@ -440,6 +443,7 @@ type
     property PromotionType: TPromotionType read FPromotionType write FPromotionType;
     property allianceCode: string read FallianceCode write FallianceCode;  //영수증 출력기준
     property allianceNumber: string read FallianceNumber write FallianceNumber;
+    property SmartixRmsTkttypId: string read FSmartixRmsTkttypId write FSmartixRmsTkttypId;
     property CouponMember: Boolean read FCouponMember write FCouponMember;
 
     property AdvertPopupType: TAdvertPopupType read FAdvertPopupType write FAdvertPopupType;
@@ -1671,6 +1675,7 @@ begin
     ACard.SendInfo.FreeAmt := 0;
     ACard.SendInfo.SvcAmt := 0;
     ACard.SendInfo.EyCard := False;
+
     ACard.SendInfo.HalbuMonth := System.Math.IfThen(Global.SaleModule.SelectHalbu = 1, 0, Global.SaleModule.SelectHalbu);
     ACard.SendInfo.BizNo := StringReplace(Global.Config.Store.BizNo, '-', '', [rfReplaceAll]);
     ACard.SendInfo.TerminalID := Global.Config.Store.VanTID;
@@ -2970,7 +2975,7 @@ begin
 
   Log.D('WellbeingClub', Ifthen(AIsApproval, '승인', '취소'));
   Log.D('WellbeingClub', AOTC);
-  
+
   AIndy := TIdHTTP.Create(nil);
   RecvData := TStringStream.Create;
   SL := TStringList.Create;
@@ -3742,7 +3747,7 @@ begin
   end
 end;
 
-function TSaleModule.ApplySmartix(const AReadData: string): Boolean;
+function TSaleModule.ApplySmartix(AIsApproval: Boolean; const AReadData: string; var AMsg: String): Boolean;
 var
   sBuffer: string;
   sHost, sToken: String;
@@ -3753,12 +3758,14 @@ var
   JOArr: TJSONArray;
   SS, RS: TStringStream;
   RBS: RawByteString;
-  sUrl, sResCode, sResMsg: string;
+  sUrl, sResCode, sResMsg, sRmsTkttypId: string;
 
   sJson: AnsiString;
 begin
   Result := False;
+  AMsg := '';
 
+  Log.D('ApplySmartix', Ifthen(AIsApproval, '승인', '취소'));
   sBuffer := AReadData; //701002392811
 
   try
@@ -3770,23 +3777,27 @@ begin
     SSL := TIdSSLIOHandlerSocketOpenSSL.Create(nil);
     try
 
-      sHost := 'https://api.ticketchannelmanager.com/api/v1/tcm/reservations/use';
-      //sHost := 'http://devapi.ticketchannelmanager.com/api/v1/tcm/reservations/use';
-
-      //Prod : https://api.ticketchannelmanager.com/api/v1/tcm/reservations/use
-      //Dev : https://devapi.ticketchannelmanager.com/api/v1/tcm/reservations/use
-
-      sUrl := sHost + '?rsSeqInspect=' + sBuffer + '&clientCompSeq=' + Global.Config.Smartix.clientCompSeq;
-      { 테스트용
-      sToken := 'eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJhZTNjMjQ5Yi0zMzU0LTRkMWUtOTk3Zi1lNjRhMzY0M2I1YmYiLCJjb21wX3NlcSI6IjE3OTkiLCJjaGFubmVsX3N'+
-                'lcSI6IjAiLCJ1c2VyX3NlcSI6IjEzMTAiLCJ1c2VyX2F1dGgiOlsiU0lURV9VU0VSIl0sImlhdCI6MTcwMzEzNTY0Nywic3ViIjoiVENNIiwiaXNzIjoiU01B'+
-                'UlRJWCJ9.PvRSR0OP4Er0NMtNEU1bc-i6eLKCijn5INmHsT66wI-zPwcfaL2_JR-CvT-zR7dfeR_oxWJJWxe9XoD6-6wVWQ';
-      }
+      sHost := 'https://api.ticketchannelmanager.com/api/v1/tcm/reservations/';
+      if AIsApproval = True then
+        sHost := sHost + 'use'
+      else
+        sHost := sHost + 'cancel';
 
       sToken := 'eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiIzMzQ2OGUzNy04ODQ4LTQxYjgtYWU2Ny05MjQyZWVkYTBjYjkiLCJjb21wX3NlcSI6IjE4NDIiLCJjaGFubmVsX3Nl'+
                 'cSI6IjAiLCJ1c2VyX3NlcSI6IjE0NDciLCJ1c2VyX2F1dGgiOlsiU0lURV9VU0VSIl0sImlhdCI6MTcwNDM1Mzk1Niwic3ViIjoiVENNIiwiaXNzIjoiU01BUl'+
                 'RJWCJ9.8Fw9AsdHsOOiSzRfoVMK390rW8MejTvvX0Q7Fm3StJ__ZLVCkPnatgfIQGByJ0ohFDZ6W2PsJhruVpLqMtYQVA';
+       (* test
+      sHost := 'https://devapi.ticketchannelmanager.com/api/v1/tcm/reservations/';
+      if AIsApproval = True then
+        sHost := sHost + 'use'
+      else
+        sHost := sHost + 'cancel';
 
+      sToken := 'eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJhZTNjMjQ5Yi0zMzU0LTRkMWUtOTk3Zi1lNjRhMzY0M2I1YmYiLCJjb21wX3NlcSI6IjE3OTkiLCJjaGFubmVsX3N'+
+                'lcSI6IjAiLCJ1c2VyX3NlcSI6IjEzMTAiLCJ1c2VyX2F1dGgiOlsiU0lURV9VU0VSIl0sImlhdCI6MTcwMzEzNTY0Nywic3ViIjoiVENNIiwiaXNzIjoiU01B'+
+                'UlRJWCJ9.PvRSR0OP4Er0NMtNEU1bc-i6eLKCijn5INmHsT66wI-zPwcfaL2_JR-CvT-zR7dfeR_oxWJJWxe9XoD6-6wVWQ';
+      *)
+      sUrl := sHost + '?rsSeqInspect=' + sBuffer + '&clientCompSeq=' + Global.Config.Smartix.clientCompSeq;
 
       HC.Request.CustomHeaders.Clear;
       HC.Request.CustomHeaders.Values['Authorization'] := 'Bearer ' + sToken;
@@ -3810,14 +3821,31 @@ begin
       sResCode := JO.GetValue('code').Value;
       sResMsg := JO.GetValue('message').Value;
 
-      if (sResCode <> '100') then
+      sRmsTkttypId := '';
+      if AIsApproval = True then
+        sRmsTkttypId := JO.GetValue('rmsTkttypId').Value;
+
+      if AIsApproval = True then
       begin
-        Global.SBMessage.ShowMessageModalForm(sResMsg, True, 15);
-        Exit;
+        if (sResCode <> '100') then
+        begin
+          AMsg := sResMsg;
+          Exit;
+        end;
+      end
+      else
+      begin
+        if (sResCode <> '10000000') then
+        begin
+          AMsg := sResMsg;
+          Exit;
+        end;
       end;
 
       allianceCode := GCD_SMARTIX_CODE;
       allianceNumber := sBuffer;
+      SmartixRmsTkttypId := sRmsTkttypId;
+
       Result := True;
     finally
       FreeAndNil(RS);

@@ -1819,12 +1819,8 @@ begin
       if BuyProductList.Count = 0 then
         Exit;
 
-      //Log.D('SaleCompleteProc', '1111');
-
-
       //배정 등록
       SelectProduct := BuyProductList[0].Products;
-       //chy test
 
       if not Global.MFErpApi.TeeBoxListReservation then
       begin
@@ -1854,7 +1850,6 @@ begin
       begin
         if Global.Config.PARKING_DAY = True then
         begin
-          //chy test
           Global.SaleModule.PopUpLevel := plParkingDay;
           ShowPopup;
         end;

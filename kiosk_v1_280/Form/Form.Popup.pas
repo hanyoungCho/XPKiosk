@@ -237,6 +237,7 @@ begin
       FKeyLength := 9;
       XGolfMember1.PhoneRec.Visible := True;
       XGolfMember1.txtTitle.Text := '스탬프 적립 전화번호';
+      XGolfMember1.txtStamp.Visible := True;
     end
     else
     begin

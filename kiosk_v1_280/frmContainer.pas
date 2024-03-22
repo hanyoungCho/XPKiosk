@@ -75,17 +75,15 @@ begin
   {$IFDEF RELEASE}
   SystemParametersInfo(SPI_SETSCREENSAVEACTIVE, Ord(False), nil, 0); // 화면보호기 비활성화
   //ShowWindow(FindWindow('Shell_TrayWnd', nil), SW_HIDE);             // 작업표시줄 비활성화
-  ShowCursor(False);
+  //ShowCursor(False);
   {$ENDIF}
   {$IFDEF DEBUG}
   Self.Top := 0;
   Self.Left := 0;
-  {
   Self.Height := DEBUG_HEIGHT;
   Self.Width := DEBUG_WIDTH;
   Self.Layout.Scale.X := DEBUG_SCALE;
   Self.Layout.Scale.Y := DEBUG_SCALE;
-  }
   {$ENDIF}
 
   if Global.Config.ProgramVersion = pvASP then

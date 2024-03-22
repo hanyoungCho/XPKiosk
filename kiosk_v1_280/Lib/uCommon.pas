@@ -85,12 +85,10 @@ begin
     Main := TMain.Create(nil);
     {$IFDEF DEBUG}
     Main.WindowState := wsNormal;
-    {
     Main.Width := DEBUG_WIDTH;
     Main.Height := DEBUG_HEIGHT;
     Main.Layout.Scale.X := DEBUG_SCALE;
     Main.Layout.Scale.Y := DEBUG_SCALE;
-    }
     {$ENDIF}
     Result := Main.ShowModal = mrOk;
   finally
@@ -108,7 +106,6 @@ begin
     {$IFDEF DEBUG}
 
     SelectBox.WindowState := wsNormal;
-    {
     SelectBox.Width := DEBUG_WIDTH;
     SelectBox.Height := DEBUG_HEIGHT;
     SelectBox.ImgLayout.Scale.X := DEBUG_SCALE;
@@ -117,7 +114,6 @@ begin
     SelectBox.Layout.Scale.Y := DEBUG_SCALE;
     SelectBox.LayoutBallBack.Scale.X := DEBUG_SCALE;
     SelectBox.LayoutBallBack.Scale.Y := DEBUG_SCALE;
-    }
     {$ENDIF}
     Result := SelectBox.ShowModal = mrOk;
   finally
@@ -135,14 +131,12 @@ begin
     {$IFDEF DEBUG}
 
     SelectBox_In.WindowState := wsNormal;
-    {
     SelectBox_In.Width := DEBUG_WIDTH;
     SelectBox_In.Height := DEBUG_HEIGHT;
     SelectBox_In.ImgLayout.Scale.X := DEBUG_SCALE;
     SelectBox_In.ImgLayout.Scale.Y := DEBUG_SCALE;
     SelectBox_In.Layout.Scale.X := DEBUG_SCALE;
     SelectBox_In.Layout.Scale.Y := DEBUG_SCALE;
-    }
     {$ENDIF}
     Result := SelectBox_In.ShowModal = mrOk;
   finally
@@ -158,14 +152,12 @@ begin
     Result := False;
     frmTeeboxMove := TfrmTeeboxMove.Create(nil);
     {$IFDEF DEBUG}
-    {
     frmTeeboxMove.WindowState := wsNormal;
     frmTeeboxMove.Width := DEBUG_WIDTH;
     frmTeeboxMove.Height := 680;
     frmTeeboxMove.Layout.Scale.X := DEBUG_SCALE;
     frmTeeboxMove.Layout.Scale.Y := DEBUG_SCALE;
     frmTeeboxMove.Left := 450;
-    }
     {$ENDIF}
     frmTeeboxMove.Top := 370;
     Result := frmTeeboxMove.ShowModal = mrOk;
@@ -182,14 +174,12 @@ begin
     Result := False;
     frmNewMemberInfo := TfrmNewMemberInfo.Create(nil);
     {$IFDEF DEBUG}
-    {
     frmNewMemberInfo.WindowState := wsNormal;
     frmNewMemberInfo.Width := DEBUG_WIDTH;
     frmNewMemberInfo.Height := DEBUG_HEIGHT;
     frmNewMemberInfo.Layout.Scale.X := DEBUG_SCALE;
     frmNewMemberInfo.Layout.Scale.Y := DEBUG_SCALE;
     frmNewMemberInfo.Left := 0;
-    }
     {$ENDIF}
     Result := frmNewMemberInfo.ShowModal = mrOk;
   finally
@@ -205,14 +195,12 @@ begin
     Result := False;
     frmNewMemberInfoTT := TfrmNewMemberInfoTT.Create(nil);
     {$IFDEF DEBUG}
-    {
     frmNewMemberInfoTT.WindowState := wsNormal;
     frmNewMemberInfoTT.Width := DEBUG_WIDTH;
     frmNewMemberInfoTT.Height := DEBUG_HEIGHT;
     frmNewMemberInfoTT.Layout.Scale.X := DEBUG_SCALE;
     frmNewMemberInfoTT.Layout.Scale.Y := DEBUG_SCALE;
     frmNewMemberInfoTT.Left := 0;
-    }
     {$ENDIF}
     Result := frmNewMemberInfoTT.ShowModal = mrOk;
   finally
@@ -228,14 +216,11 @@ begin
       Log.D('ShowSaleProduct', 'Begin');
       SaleProduct := TSaleProduct.Create(nil);
       {$IFDEF DEBUG}
-
       SaleProduct.WindowState := wsNormal;
-      {
       SaleProduct.Width := DEBUG_WIDTH;
       SaleProduct.Height := DEBUG_HEIGHT;
       SaleProduct.Layout.Scale.X := DEBUG_SCALE;
       SaleProduct.Layout.Scale.Y := DEBUG_SCALE;
-      }
       {$ENDIF}
       Result := SaleProduct.ShowModal = mrOk;
     finally
@@ -256,12 +241,10 @@ begin
     {$IFDEF DEBUG}
 
     Popup.WindowState := wsNormal;
-    {
     Popup.Width := DEBUG_WIDTH;
     Popup.Height := DEBUG_HEIGHT;
     Popup.Layout.Scale.X := DEBUG_SCALE;
     Popup.Layout.Scale.Y := DEBUG_SCALE;
-    }
     {$ENDIF}
     Result := Popup.ShowModal = mrOk;
   finally
@@ -284,14 +267,11 @@ begin
 
       FullPopup := TFullPopup.Create(nil);
       {$IFDEF DEBUG}
-
       FullPopup.WindowState := wsNormal;
-      {
       FullPopup.Width := DEBUG_WIDTH;
       FullPopup.Height := DEBUG_HEIGHT;
       FullPopup.Layout.Scale.X := DEBUG_SCALE;
       FullPopup.Layout.Scale.Y := DEBUG_SCALE;
-      }
       {$ENDIF}
       Result := FullPopup.ShowModal;
     finally
@@ -318,13 +298,11 @@ begin
     Log.D('Config', 'Begin');
     Config := TConfig.Create(nil);
     {$IFDEF DEBUG}
-    {
     Config.WindowState := wsNormal;
     Config.Width := DEBUG_WIDTH;
     Config.Height := DEBUG_HEIGHT;
     Config.Layout.Scale.X := DEBUG_SCALE;
     Config.Layout.Scale.Y := DEBUG_SCALE;
-    }
     {$ENDIF}
     Result := Config.ShowModal = mrOk;
   finally
@@ -344,14 +322,11 @@ begin
     MasterDownload.Product := Product;
     MasterDownload.TeeBox := TeeBox;
     {$IFDEF DEBUG}
-
     MasterDownload.WindowState := wsNormal;
-    {
     MasterDownload.Width := DEBUG_WIDTH;
     MasterDownload.Height := DEBUG_HEIGHT;
     MasterDownload.ImgLayout.Scale.X := DEBUG_SCALE;
     MasterDownload.ImgLayout.Scale.Y := DEBUG_SCALE;
-    }
     {$ENDIF}
     Result := MasterDownload.ShowModal = mrOk;
   finally
@@ -404,13 +379,11 @@ begin
 
     SBMessageForm := TSBMessageForm.Create(nil);
     {$IFDEF DEBUG}
-    {
     SBMessageForm.WindowState := wsNormal;
     SBMessageForm.Width := DEBUG_WIDTH;
     SBMessageForm.Height := DEBUG_HEIGHT;
     SBMessageForm.Layout.Scale.X := DEBUG_SCALE;
     SBMessageForm.Layout.Scale.Y := DEBUG_SCALE;
-    }
     {$ENDIF}
     SBMessageForm.PassWord := IsPassword;
     SBMessageForm.Text.Text := AMsg;
@@ -438,13 +411,11 @@ begin
 
       SBMessageForm := TSBMessageForm.Create(nil);
       {$IFDEF DEBUG}
-      {
       SBMessageForm.WindowState := wsNormal;
       SBMessageForm.Width := DEBUG_WIDTH;
       SBMessageForm.Height := DEBUG_HEIGHT;
       SBMessageForm.Layout.Scale.X := DEBUG_SCALE;
       SBMessageForm.Layout.Scale.Y := DEBUG_SCALE;
-      }
       {$ENDIF}
       SBMessageForm.PassWord := False;
       SBMessageForm.Text.Text := AMsg;
@@ -485,13 +456,11 @@ begin
 
       SBMessageForm := TSBMessageForm.Create(nil);
       {$IFDEF DEBUG}
-      {
       SBMessageForm.WindowState := wsNormal;
       SBMessageForm.Width := DEBUG_WIDTH;
       SBMessageForm.Height := DEBUG_HEIGHT;
       SBMessageForm.Layout.Scale.X := DEBUG_SCALE;
       SBMessageForm.Layout.Scale.Y := DEBUG_SCALE;
-      }
       {$ENDIF}
       SBMessageForm.PassWord := False;
       SBMessageForm.Text.Text := AMsg;
@@ -532,13 +501,11 @@ begin
 
       SBMessageForm := TSBMessageForm.Create(nil);
       {$IFDEF DEBUG}
-      {
       SBMessageForm.WindowState := wsNormal;
       SBMessageForm.Width := DEBUG_WIDTH;
       SBMessageForm.Height := DEBUG_HEIGHT;
       SBMessageForm.Layout.Scale.X := DEBUG_SCALE;
       SBMessageForm.Layout.Scale.Y := DEBUG_SCALE;
-      }
       {$ENDIF}
       SBMessageForm.PassWord := False;
       SBMessageForm.Text.Text := AMsg;
@@ -570,13 +537,11 @@ begin
   try
     IntroBlank := TIntroBlank.Create(nil);
     {$IFDEF DEBUG}
-    {
     IntroBlank.WindowState := wsNormal;
     IntroBlank.Width := DEBUG_WIDTH;
     IntroBlank.Height := DEBUG_HEIGHT;
     IntroBlank.Layout.Scale.X := DEBUG_SCALE;
     IntroBlank.Layout.Scale.Y := DEBUG_SCALE;
-    }
     {$ENDIF}
     Result := IntroBlank.ModalResult = mrOk;
   finally
@@ -591,13 +556,11 @@ begin
       Log.D('ShowIntro', 'Begin');
       Intro := TIntro.Create(nil);
       {$IFDEF DEBUG}
-      {
       Intro.WindowState := wsNormal;
       Intro.Width := DEBUG_WIDTH;
       Intro.Height := DEBUG_HEIGHT;
       Intro.Layout.Scale.X := DEBUG_SCALE;
       Intro.Layout.Scale.Y := DEBUG_SCALE;
-      }
       {$ENDIF}
       Intro.MediaFrame1.MediaPlayer1.Stop;
       if Global.SaleModule.AdvertListUp.Count <> 0 then
@@ -978,13 +941,11 @@ begin
     Result := False;
     frmPolicyView := TfrmPolicyView.Create(nil);
     {$IFDEF DEBUG}
-    {
     frmPolicyView.WindowState := wsNormal;
     frmPolicyView.Width := DEBUG_WIDTH;
     frmPolicyView.Height := DEBUG_HEIGHT;
     frmPolicyView.Layout.Scale.X := DEBUG_SCALE;
     frmPolicyView.Layout.Scale.Y := DEBUG_SCALE;
-    }
     {$ENDIF}
     frmPolicyView.FPolicyType := AType;
 
@@ -1015,13 +976,11 @@ begin
     Result := False;
     frmPolicyView := TfrmPolicyView.Create(nil);
     {$IFDEF DEBUG}
-    {
     frmPolicyView.WindowState := wsNormal;
     frmPolicyView.Width := DEBUG_WIDTH;
     frmPolicyView.Height := DEBUG_HEIGHT;
     frmPolicyView.Layout.Scale.X := DEBUG_SCALE;
     frmPolicyView.Layout.Scale.Y := DEBUG_SCALE;
-    }
     {$ENDIF}
     frmPolicyView.FPolicyType := 0;
     frmPolicyView.recOK.Visible := False;
@@ -1042,13 +1001,11 @@ begin
     Result := False;
     frmAdvertise := TfrmAdvertise.Create(nil);
     {$IFDEF DEBUG}
-    {
     frmAdvertise.WindowState := wsNormal;
     frmAdvertise.Width := DEBUG_WIDTH;
     frmAdvertise.Height := DEBUG_HEIGHT;
     frmAdvertise.Layout.Scale.X := DEBUG_SCALE;
     frmAdvertise.Layout.Scale.Y := DEBUG_SCALE;
-    }
     {$ENDIF}
     frmAdvertise.FType := 'Receipt';
     frmAdvertise.FCnt := 0;
@@ -1070,13 +1027,11 @@ begin
     Result := False;
     frmAdvertise := TfrmAdvertise.Create(nil);
     {$IFDEF DEBUG}
-    {
     frmAdvertise.WindowState := wsNormal;
     frmAdvertise.Width := DEBUG_WIDTH;
     frmAdvertise.Height := DEBUG_HEIGHT;
     frmAdvertise.Layout.Scale.X := DEBUG_SCALE;
     frmAdvertise.Layout.Scale.Y := DEBUG_SCALE;
-    }
     {$ENDIF}
     frmAdvertise.FType := 'Event';
     frmAdvertise.recOK.Visible := False;

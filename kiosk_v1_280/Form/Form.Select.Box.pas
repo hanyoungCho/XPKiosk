@@ -839,7 +839,7 @@ begin
 
   end;
 end;
-
+{
 function TSelectBox.SaleProductTCM: Boolean;
 var
   AMember: TMemberInfo;
@@ -860,7 +860,10 @@ begin
     begin
       AProduct := Global.SaleModule.SaleList[Index];
 
-      if AProduct.Alliance_code = GCD_SMARTIX_CODE then // 스마틱스 00007 -> 임시
+      if AProduct.Product_Div <> PRODUCT_TYPE_D then
+        Continue;
+
+      if AProduct.Alliance_code = GCD_SMARTIX_CODE then // 스마틱스 00007
       begin
         bChk := True;
         Break;
@@ -945,6 +948,163 @@ begin
     Result := True;
   finally
 
+  end;
+end;
+}
+
+function TSelectBox.SaleProductTCM: Boolean;
+var
+  AMember: TMemberInfo;
+  bChk, bAuth: Boolean;
+
+  Index: Integer;
+  StartTime, EndTime, NowTime: string;
+  AProduct, AProductTM: TProductInfo;
+  sCode, sMsg, sErrorMsg, sRecvMsg: String;
+begin
+  Result := False;
+  bAuth := False;
+
+  try
+
+    //스마틱스 상품 여부 확인
+    bChk := False;
+    for Index := 0 to Global.SaleModule.SaleList.Count - 1 do
+    begin
+      AProduct := Global.SaleModule.SaleList[Index];
+
+      if AProduct.Product_Div <> PRODUCT_TYPE_D then
+        Continue;
+
+      if AProduct.Alliance_code = GCD_SMARTIX_CODE then // 스마틱스 00007
+      begin
+        bChk := True;
+        Break;
+      end;
+    end;
+
+    if bChk = False then
+    begin
+      ShowErrorMsg('온라인 상품이 없습니다.');
+      Exit;
+    end;
+
+    // 바코드 인식
+    Global.SaleModule.PromotionType := pttSmartix;
+    if not (ShowFullPopup(False, 'SaleProductTCM') = mrOk) then
+      Exit;
+
+    bAuth := True;
+
+    // 스마틱스 인증 성공 후 상품 매칭
+    bChk := False;
+    for Index := 0 to Global.SaleModule.SaleList.Count - 1 do
+    begin
+      AProduct := Global.SaleModule.SaleList[Index];
+
+      if AProduct.Product_Div <> PRODUCT_TYPE_D then
+        Continue;
+
+      if AProduct.Alliance_code <> GCD_SMARTIX_CODE then
+        Continue;
+
+      if AProduct.Alliance_item_code = Global.SaleModule.SmartixRmsTkttypId then
+      begin
+        bChk := True;
+        Break;
+      end;
+    end;
+
+    if bChk = False then
+    begin
+      sErrorMsg := '해당하는 권종 상품이 없습니다.(권종코드:' + Global.SaleModule.SmartixRmsTkttypId + ')';
+      Exit;
+    end;
+
+    //선택된 타석의 구역구분 포함여부
+    if not (Pos(Global.SaleModule.TeeBoxInfo.ZoneCode, AProduct.AvailableZoneCd) > 0) then
+    begin
+      sErrorMsg := '해당 타석에서는 사용할수 없습니다.';
+      Exit;
+    end;
+
+    if global.Config.ProductTime = True then // 타석선택시간 기준 타석상품 표출
+      NowTime := FormatDateTime('yyyymmddhhnn', now)
+    else
+    begin
+      if Global.SaleModule.TeeBoxInfo.BtweenTime <> 0 then //타석 전체 잔여시간
+        NowTime := FormatDateTime('yyyymmdd', now) + StringReplace(Global.SaleModule.TeeBoxInfo.End_Time, ':', '', [rfReplaceAll]) + '00'
+      else
+        NowTime := FormatDateTime('yyyymmddhhnn', now);
+    end;
+
+    StartTime := StringReplace(AProduct.Start_Time, ':', '', [rfReplaceAll]);
+    EndTime := StringReplace(AProduct.End_Time, ':', '', [rfReplaceAll]);
+
+    bChk := False;
+    if StartTime > EndTime then // 익일종료
+    begin
+      if not ((StartTime <= Copy(NowTime, 9, 4)) or (Copy(NowTime, 9, 4) <= EndTime)) then
+        bChk := True;
+    end
+    else
+    begin
+      if not ((StartTime <= Copy(NowTime, 9, 4)) and (Copy(NowTime, 9, 4) <= EndTime)) then
+        bChk := True;
+    end;
+
+    if bChk = True then
+    begin
+      sErrorMsg := '해당 상품의 이용시간이 아닙니다.';
+      Exit;
+    end;
+
+    //해당 상품 현재 사용가능여부
+    AProductTM := Global.Database.GetTeeBoxProductTime(AProduct.Code, sCode, sMsg);
+    if sCode <> '0000' then
+    begin
+      sErrorMsg := sMsg;
+      Exit;
+    end;
+
+    AProduct.Limit_Product_Yn := AProductTM.Limit_Product_Yn;
+    AProduct.One_Use_Time := AProductTM.One_Use_Time;
+
+    if Global.SaleModule.AddProduct(AProduct) = False then
+    begin
+      sErrorMsg := '해당상품 등록에 실패하였습니다';
+      Exit;
+    end;
+
+    Log.D('제휴상품', '-----------------------------------------------------');
+    Log.D('제휴상품', AProduct.Code);
+    Log.D('제휴상품', AProduct.Name);
+    Log.D('제휴상품', AProduct.Start_Time);
+    Log.D('제휴상품', AProduct.End_Time);
+    Log.D('제휴상품', '-----------------------------------------------------');
+
+
+    // 스마틱스 인증 성공 및 상품 매칭 성공
+    Global.SaleModule.PromotionType := pttNone;
+    Global.SaleModule.SaleCompleteProc;
+
+    Result := True;
+  finally
+    if Result = False then
+    begin
+      if bAuth = True then
+      begin
+         if Global.SaleModule.ApplySmartix(False, Global.SaleModule.allianceNumber, sRecvMsg) then
+           ShowErrorMsg(sErrorMsg)
+         else
+           ShowErrorMsg(sErrorMsg + #13 + '사용처리 취소를 위해 카운터에 문의 해주세요');
+      end
+      else
+      begin
+        if sErrorMsg <> '' then
+          ShowErrorMsg(sErrorMsg);
+      end;
+    end;
   end;
 end;
 

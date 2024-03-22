@@ -70,9 +70,10 @@ begin
   Self.Layout.Scale.Y := DEBUG_SCALE;
   {$ENDIF}
 
-  {$IFDEF RELEASE}
+  //chy test
+  //{$IFDEF RELEASE}
   ShowMasterDownload(True, True, True, True, True);
-  {$ENDIF}
+  //{$ENDIF}
 
   ShowMain;
 
